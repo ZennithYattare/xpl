@@ -21,7 +21,7 @@ const Login = () => {
 			setUsername("");
 			setPassword("");
 			notify({ message: "Logged in successfully", alert: "success" });
-			// navigate("/dashboard");
+			navigate("/dashboard");
 		},
 		onError: (error) => {
 			setUsername("");
@@ -43,7 +43,7 @@ const Login = () => {
 
 	return (
 		<>
-			<section>
+			<form>
 				<div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:px-12 lg:px-24 lg:py-24">
 					<div className="mx-auto transform justify-center rounded-lg bg-white text-left align-bottom transition-all sm:w-full sm:max-w-2xl sm:align-middle">
 						<div className="mx-auto grid grid-cols-1 flex-wrap items-center justify-center rounded-xl shadow-xl lg:grid-cols-2">
@@ -117,7 +117,7 @@ const Login = () => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</form>
 		</>
 	);
 };

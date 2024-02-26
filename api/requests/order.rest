@@ -5,6 +5,12 @@
 GET {{baseUrl}} 
 
 ###
+# GET request for fetching a user orders
+GET {{baseUrl}}/user
+Content-Type: application/json
+Authorization: {{token}}
+
+###
 # POST request for creating a new order
 POST {{baseUrl}}
 Content-Type: application/json
@@ -24,7 +30,7 @@ Authorization: {{token}}
 
 {
   "orderNumber": "12341234",
-  "item": "Shoes",
+  "item": "Sneakers",
   "deliveryDate": "2021-12-31"
 }
 

@@ -14,6 +14,29 @@ orderRouter.get("/", async (request, response) => {
 	response.json(orders);
 });
 
+// NOTE: Get orders of a user
+// GET /api/orders/user
+orderRouter.get(
+	"/user",
+	middleware.tokenExtractor,
+	middleware.verifyToken,
+	async (request, response) => {
+		const user = await User.findById(request.user.id);
+
+		if (!user) {
+			return response.status(400).json({ error: "User not found." });
+		}
+
+		const orders = await Order.find({ user: user._id });
+
+		if (!orders) {
+			return response.status(400).json({ error: "Orders not found." });
+		}
+
+		response.json(orders);
+	}
+);
+
 // NOTE: Create new order
 // POST /api/order
 orderRouter.post(
