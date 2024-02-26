@@ -1,0 +1,35 @@
+@baseUrl=http://localhost:3003/api/order
+@token=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJpZCI6IjY1ZGJmZDMwNDk2OTJmMTBiMWUyNDgyMSIsImlhdCI6MTcwODkxNjU2MywiZXhwIjoxNzA5NTIxMzYzfQ.HFnaniE7aJLWrAi_wo1CmpOcwAtmrWVgLaYhjtNRiwA
+@id=65dc027f10512d0b6ab1a1f8
+
+GET {{baseUrl}} 
+
+###
+# POST request for creating a new order
+POST {{baseUrl}}
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "orderNumber": "123456",
+  "item": "Shirt",
+  "deliveryDate": "2021-12-31"
+}
+
+###
+# PUT request for updating an order
+PUT {{baseUrl}}/{{id}}
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "orderNumber": "12341234",
+  "item": "Shoes",
+  "deliveryDate": "2021-12-31"
+}
+
+###
+# DELETE request for "soft deleting" an order
+PUT {{baseUrl}}/delete/{{id}}
+Content-Type: application/json
+Authorization: {{token}}

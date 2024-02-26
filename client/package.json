@@ -1,0 +1,47 @@
+{
+	"name": "client",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"dev": "vite --host",
+		"build": "vite build",
+		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+		"preview": "vite preview",
+		"cypress:open": "cypress open",
+		"test:e2e": "cypress run"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^4.29.12",
+		"axios": "^1.2.3",
+		"jotai": "^2.4.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-markdown": "^9.0.1",
+		"react-router-dom": "^6.12.1"
+	},
+	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.10",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^14.0.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/react": "^18.2.15",
+		"@types/react-dom": "^18.2.7",
+		"@vitejs/plugin-react-swc": "^3.3.2",
+		"autoprefixer": "^10.4.15",
+		"cypress": "^13.2.0",
+		"eslint": "^8.45.0",
+		"eslint-plugin-cypress": "^2.15.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.3",
+		"postcss": "^8.4.29",
+		"prettier": "^2.8.8",
+		"prettier-plugin-tailwindcss": "^0.3.0",
+		"tailwindcss": "^3.3.3",
+		"vite": "^4.4.5"
+	},
+	"author": "",
+	"license": "ISC"
+}

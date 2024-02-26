@@ -1,0 +1,37 @@
+@baseUrl=http://localhost:3003/api/auth
+@token=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJpZCI6IjY1ZGJmZDMwNDk2OTJmMTBiMWUyNDgyMSIsImlhdCI6MTcwODkxNjU2MywiZXhwIjoxNzA5NTIxMzYzfQ.HFnaniE7aJLWrAi_wo1CmpOcwAtmrWVgLaYhjtNRiwA
+
+GET {{baseUrl}} 
+
+###
+# POST request for LOGIN
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "password1234"
+}
+ 
+###
+# POST request for REGISTER
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "password123",
+  "name": "John Doe"
+}
+
+###
+# PUT request for change password
+PUT {{baseUrl}}/change-password
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "oldPassword": "password123",
+  "newPassword": "password1234",
+  "confirmNewPassword": "password1234"
+}
